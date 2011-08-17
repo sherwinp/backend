@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/WEB-INF/templates/common_1_folderfiletree.xhtml">
+        <ui:define name="csscontent" >
+            <h:outputStylesheet library="styles" name="jqueryFileTree.css" />
+        </ui:define>
+        <ui:define name="scriptcontent">
+            <h:outputScript library="javascript" name="jquery-1.6.2.min.js" />
+            <h:outputScript library="javascript" name="jqueryFileTree.js" />
+            <h:outputScript library="javascript" name="script.js" />
+        </ui:define>
+        <ui:define name="content">
+            <h:link outcome="index" value="FIRE CSR" />
+            &gt;
+            <h:link outcome="systemadministration" value="System Admin"/>
+            &gt; <b>U15 Folder View</b>
+                       
+            <div id="filetree" style="height: 600px; overflow:auto; border: 1px solid #a9a9a9;">
+
+            </div>
+            
+        </ui:define>
+    </ui:composition>
+</html>

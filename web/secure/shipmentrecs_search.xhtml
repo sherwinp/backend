@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/WEB-INF/templates/common_1.xhtml">
+        <ui:define name="content">
+            <h:link outcome="index" value="FIRE CSR" />
+            &gt;
+            <h:link outcome="systemadministration" value="System Admin"/>
+            &gt;
+            <h:link outcome="shipmentrec" value="Shipmentrec"/>
+            &gt;<b>Search</b>
+            <hr style="clear:both;"/>
+            <fieldset>
+                <h:outputLabel value="Filename" for="fileName" />
+                <h:inputText id="fileName" />
+                <h:outputLabel value="Tax Year" for="taxYear"/>
+                <select id="taxYear"  >
+                    <option>2010</option>
+                    <option>2009</option>
+                    <option>2008</option>
+                    <option>2007</option>
+                </select>
+                <h:button id="btnSearch" outcome="shipmentrecs.jsf" value="Search" />
+            </fieldset>                        
+        </ui:define>
+    </ui:composition>
+</html>

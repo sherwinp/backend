@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/WEB-INF/templates/common_1.xhtml">
+        <ui:define name="content">
+            <p>
+            <h:link outcome="index" value="FIRE CSR" />
+            &gt;
+            <h:link outcome="systemadministration" value="System Admin"/>
+            &gt; <b>Main Menu</b>
+            </p>        
+            <hr style="clear:both;"/>
+            <p>
+                <div>
+                    <div style="margin-left: 30px;float:left;">
+                        <b><h:outputLabel value ="Tables" /></b>
+                        <ul style="list-style:none;padding: 0;">    
+                            <li><h:button value="Pword"/></li>
+                            <li><h:button value="Trnsmttrrec" /></li>
+                            <li><h:button value="Profile" /></li>
+                        </ul>
+                        <ul style="list-style:none;padding: 0;">    
+                            <li><h:button value="M1101"/></li>
+                            <li><h:button value="SPS1101" /></li>
+                            <li><h:button value="AWX0802" /></li>
+                        </ul>
+                    </div>
+                    <div style="margin-left: 30px;float:left;">
+                        <b><h:outputLabel value ="Admin Options" /></b>
+                        <ul style="list-style: none;padding: 0;">    
+                            <li><h:button outcome="folderfiletree" value="View U15 Folder"/></li>
+                            <li><h:button value="Trnsmttrrec Import/Delete" /></li>
+                            <li><h:button value="Process Check SPS" /></li>
+                            <li><h:button value="Process Check Other" /></li>
+                            <li><h:button value="Process Check Extension" /></li>
+                            <li><h:button value="Fraud Research" /></li>
+                        </ul>
+                    </div>
+                    <div style="margin-left: 30px;float:left; padding-left: 100px;">
+                        <b><h:outputLabel value ="Misc Tables" /></b>
+                        <ul style="list-style:none;padding: 0;"> 
+                            <li><h:button outcome="shipmentrecs?faces-redirect=true" value="Shipmentrecs" /></li>
+                            <li><h:button value="M1711" /></li>
+                            <li><h:button value="Logs" /></li>
+                            <li><h:button value="Error Codes" /></li>
+                            <li><h:button value="Ignore Codes" /></li>
+                            <li><h:button value="Screen Values" /></li>
+                            <li><h:button value="Automated Transfer" /></li>
+                            <li><h:button value="530/564/3.4" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </p>       
+        </ui:define>
+    </ui:composition>
+</html>
