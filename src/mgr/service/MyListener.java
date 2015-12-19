@@ -4,6 +4,8 @@
  */
 package mgr.service;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author sherwinp
@@ -11,12 +13,15 @@ package mgr.service;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-public class MyListener implements ServletContextListener {
+import mgr.storage.MyBatisUtil;
 
+public class MyListener implements ServletContextListener {
+	private static final Logger logger = Logger.getLogger(MyBatisUtil.class.getName());
     @Override
     public void contextInitialized(ServletContextEvent sce) {
          // start the thread
-         
+    	MyBatisUtil.getSqlSessionFactory();
+    	logger.info("database connection established.");
     }
 
     @Override

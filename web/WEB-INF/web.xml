@@ -5,7 +5,10 @@
         <param-name>javax.faces.DEVELOPMENT</param-name>
         <param-value>true</param-value>
     </context-param>
-
+  <listener>
+    <listener-class>mgr.service.MyListener</listener-class>
+  </listener>
+  
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
