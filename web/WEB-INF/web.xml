@@ -17,7 +17,7 @@
     
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.jsf</url-pattern>
+        <url-pattern>*.html</url-pattern>
     </servlet-mapping>
  
     <session-config>
@@ -27,7 +27,7 @@
     </session-config>
     
     <welcome-file-list>
-        <welcome-file>index.jsf</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     
     <security-role>
@@ -40,9 +40,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>public</web-resource-name>
-            <url-pattern>/index.jsf</url-pattern>
-            <url-pattern>/logon.jsf</url-pattern>
-            <url-pattern>/basics.xhtml</url-pattern>
+            <url-pattern>/index.html</url-pattern>
             <url-pattern>/favicon.gif</url-pattern>
             <url-pattern>/resources/*</url-pattern>
             <http-method>HEAD</http-method>
@@ -68,8 +66,8 @@
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/index.jsf</form-login-page>
-            <form-error-page>/index.jsf</form-error-page>
+            <form-login-page>/index.html</form-login-page>
+            <form-error-page>/index.html</form-error-page>
         </form-login-config>
     </login-config>
     

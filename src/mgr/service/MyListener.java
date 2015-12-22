@@ -13,19 +13,29 @@ import java.util.logging.Logger;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import org.apache.ibatis.session.SqlSession;
+
+import data.model.User;
+import data.model.Users;
 import mgr.storage.MyBatisUtil;
 
 public class MyListener implements ServletContextListener {
-	private static final Logger logger = Logger.getLogger(MyBatisUtil.class.getName());
-    @Override
-    public void contextInitialized(ServletContextEvent sce) {
-         // start the thread
-    	MyBatisUtil.getSqlSessionFactory();
-    	logger.info("database connection established.");
-    }
+	private static final Logger logger = Logger.getLogger(MyListener.class.getName());
 
-    @Override
-    public void contextDestroyed(ServletContextEvent sce) {
-         // stop the thread
-    }
+	@Override
+	public void contextInitialized(ServletContextEvent sce) {
+		// start the thread
+//		Users users = null;
+//		try (SqlSession sqlSession = MyBatisUtil.getSqlSessionFactory().openSession()) {
+//			logger.info("database connection established.");
+//			users = sqlSession.getMapper(Users.class);
+//		} finally {
+//
+//		}
+	}
+
+	@Override
+	public void contextDestroyed(ServletContextEvent sce) {
+		// stop the thread
+	}
 }
