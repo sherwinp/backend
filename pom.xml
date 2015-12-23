@@ -65,6 +65,13 @@
   		<version>3.8.11.2</version>
   		<scope>provided</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>com.d_project</groupId>
+  		<artifactId>qrcode</artifactId>
+  		<version>1.0.0</version>
+  		<scope>system</scope>
+  		<systemPath>${project.basedir}/web/WEB-INF/lib/qrcode-1.0.0.jar</systemPath>
+  	</dependency>
   </dependencies>
   
 </project>

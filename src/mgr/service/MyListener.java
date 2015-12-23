@@ -25,13 +25,6 @@ public class MyListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		// start the thread
-//		Users users = null;
-//		try (SqlSession sqlSession = MyBatisUtil.getSqlSessionFactory().openSession()) {
-//			logger.info("database connection established.");
-//			users = sqlSession.getMapper(Users.class);
-//		} finally {
-//
-//		}
 	}
 
 	@Override

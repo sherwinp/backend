@@ -80,12 +80,13 @@ public class AuthenticationController {
         return "";
     }
     
-    public String logout(){
+    public String logout() throws IOException{
         log( "AuthenticationController.logout: logging - out." );
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         request.getSession().invalidate();
-        return  "../index?faces-redirect=true&";
+        context.getExternalContext().redirect("../index.html");
+        return  "../index.html?faces-redirect=true&";
     }
     
     private void log(String message){

@@ -5,19 +5,26 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <ui:composition template="/WEB-INF/templates/common_1.xhtml">
         <ui:define name="content">
-            <h2>FIRE - SYSTEM - CSR management Console:</h2>
+            <h2>APPLICATION - SYSTEM - Management Console:</h2>
             <label>Log In</label>
-
+            <ul style="list-style:none;padding-right: 8px;">
+			<li style="float: left; padding-top:10px;">
+				<img src="qrcode?s=2"	style="width: 60px; height: 60px;" alt="qrcode"/>
+			</li>
+			<li style="padding: 8px 8px 8px 8px; float: left;">
             <p>
                 <h:outputLabel for="j_username">User Name:</h:outputLabel>
                 <h:inputText id="j_username" required="true" />
             </p>
+            
             <p>
                 <h:outputLabel for="j_password">Password:</h:outputLabel>
                 <h:inputSecret id="j_password" required="true"/>
             </p>
-
-            <p><h:commandButton id="j_security_check" 
+			</li>
+			</ul>
+		
+            <p style="clear:both;"><h:commandButton id="j_security_check" 
                                 type="submit" 
                                 action="#{authenticationController.login}" 
                                 value="Log In"/></p>
@@ -32,13 +39,11 @@
 
             <p>
                 <strong>Important Notice</strong><br/>
-                This computer system is owned and operated by the Government of the UNITED STATES
-                of AMERICA. Unauthorized access of this system is a violation of Federal Statutes
-                18 USC 30. This system is for OFFICIAL USE ONLY and is subject to monitoring at
-                all times. If you have reached this system in error, disconnect now! The activity
-                of authorized users may also be monitored. If monitoring reveals evidence of criminal
-                activity, systems personnel may provide the evidence to management and/or law enforcement
-                officials.
+                Unauthorized access of this system is a violation. This system is for OFFICIAL USE ONLY
+                and is subject to monitoring at all times. If you have reached this system in error, 
+                disconnect now! The activity of authorized users may also be monitored. If monitoring 
+                reveals evidence of criminal activity, systems personnel shall provide this as evidence 
+                to management and/or law enforcement officials.
             </p>
 
             <p><span id="lblWho">Welcome: #{request.getRemoteUser()}<br/></span></p>

@@ -1,67 +1,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-    <ui:composition template="/WEB-INF/templates/common_1.xhtml">
-        <ui:define name="content">
-            <p>
-                <h2>FIRE - SYSTEM - CSR management Console:</h2>
-            </p>
-            <hr style="clear:both;"/>
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/WEB-INF/templates/common_1.xhtml">
+	<ui:define name="content">
+		<p>
+			<h2>APPLICATION - SYSTEM - Management Console:</h2>
+		</p>
+		<p>
+			<h:commandLink action="#{authenticationController.logout}">Logout</h:commandLink>
+		</p>
+		<hr style="clear: both;" />
+		<h:dataTable value="#{onlineUsers.users}" var="user">
+			<h:column>
+				<f:facet name="header">Name</f:facet>    				
+      				#{user.firstName}
+ 			  </h:column>
+		</h:dataTable>
+		<hr style="clear: both;" />
+		<p style="clear: both;">
+			<strong>Important Notice</strong><br /> This computer system is owned
+			and operated by the Government of the UNITED STATES of AMERICA.
+			Unauthorized access of this system is a violation of Federal Statutes
+			18 USC 30. This system is for OFFICIAL USE ONLY and is subject to
+			monitoring at all times. If you have reached this system in error,
+			disconnect now! The activity of authorized users may also be
+			monitored. If monitoring reveals evidence of criminal activity,
+			systems personnel may provide the evidence to management and/or law
+			enforcement officials.
+		</p>
 
-            <p>
-                <h:link outcome="index" value="FIRE CSR" /> &gt; <b>Main Menu</b>
-                <h:outputLabel for="taxYear" value="Tax Year" style="margin-left: 80px;"/>
-                <select id="taxYear"  >                    
-                    <option>2010</option>
-                    <option>2009</option>
-                    <option>2008</option>
-                    <option>2007</option>
-                </select>
-                <h:outputLabel for="txtSearch" value="Search:" />
-                <h:inputText id="txtSearch" />
-                <select>
-                    <option selected="selected">TCC</option>
-                    <option>User ID</option>
-                    <option>Fire</option>
-                    <option>File</option>
-                    <option>Phone Number</option>
-                    <option>PIN</option>
-                </select>
-                <h:commandButton action="shipmentrecs?faces-redirect=true&amp;" id="btnSearch" value="Search" />
-                <hr style="clear:both;"/>
-                <div>
-                    <div style="float:left;">
-                        <h:outputLabel value ="Data Processing Options" />
-                        <ul style="list-style:none;">    
-                            <li><h:button value="Administrative Reports"/></li>
-                            <li><h:button value="Data Processing" /></li>
-                        </ul>
-                    </div>
-                    <div style="float:left; padding-left: 100px;">
-                        <h:outputLabel value ="Admin Options" />
-                        <ul style="list-style:none;"> 
-                            <li><h:button outcome="systemadministration?faces-redirect=true" value="System Admin" /></li>
-                            <li><h:button value="Fill-In Extension" /></li>
-                            <li><h:button value="Email Options" /></li>
-                            <li><h:button value="Invalidate Users by Date" /></li>
-                        </ul>
-                    </div>
-                </div>
-            </p>
-            <p style="clear:both;">
-                <strong>Important Notice</strong><br/>
-                This computer system is owned and operated by the Government of the UNITED STATES
-                of AMERICA. Unauthorized access of this system is a violation of Federal Statutes
-                18 USC 30. This system is for OFFICIAL USE ONLY and is subject to monitoring at
-                all times. If you have reached this system in error, disconnect now! The activity
-                of authorized users may also be monitored. If monitoring reveals evidence of criminal
-                activity, systems personnel may provide the evidence to management and/or law enforcement
-                officials.
-            </p>
-
-            <p><span id="lblWho">Welcome: #{request.getRemoteUser()}<br/></span></p>
-        </ui:define>
-    </ui:composition>
+		<p>
+			<span id="lblWho">Welcome: #{request.getRemoteUser()}<br /></span>
+		</p>
+	</ui:define>
+</ui:composition>
 </html>
