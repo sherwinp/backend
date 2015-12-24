@@ -7,6 +7,7 @@ body{
     font-family: arial, verdana, sans-serif;
     font-size: .8em;
 }
+section { display: block; }
 image {
     border:0;
 }
@@ -25,8 +26,14 @@ div#main
 }
 div.headerBar
 {
-    background-color: #001E59;
+    background-color: #729fcf;
+    background-image: url('../resources/images/default_banner_image.jpg');
+    background-repeat: norepeat;
+    background-position: right top;
+    background-attachment: fixed;
+    height: 256px;
 }
+
 div.content{
     float: right;
     width: 90%;

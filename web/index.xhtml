@@ -1,11 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ph="http://xmlns.jcp.org/jsf/passthrough">
     <ui:composition template="/WEB-INF/templates/common_1.xhtml">
         <ui:define name="content">
-            <h2>APPLICATION - SYSTEM - Management Console:</h2>
+		<div>
+			<section>
             <label>Log In</label>
             <ul style="list-style:none;padding-right: 8px;">
 			<li style="float: left; padding-top:10px;">
@@ -13,17 +15,17 @@
 			</li>
 			<li style="padding: 8px 8px 8px 8px; float: left;">
             <p>
-                <h:outputLabel for="j_username">User Name:</h:outputLabel>
-                <h:inputText id="j_username" required="true" />
+                <h:outputLabel for="j_username">User Name:</h:outputLabel><br/>
+                <h:inputText id="j_username" required="true" ph:placeholder="user name" />
+                
             </p>
             
             <p>
-                <h:outputLabel for="j_password">Password:</h:outputLabel>
-                <h:inputSecret id="j_password" required="true"/>
+                <h:outputLabel for="j_password">Password:</h:outputLabel><br/>
+                <h:inputSecret id="j_password" required="true" ph:placeholder="password"/>
             </p>
 			</li>
 			</ul>
-		
             <p style="clear:both;"><h:commandButton id="j_security_check" 
                                 type="submit" 
                                 action="#{authenticationController.login}" 
@@ -34,10 +36,12 @@
             <p>
                 <a href="forgotcredentials.html" >Forgot my password</a>
             </p>
-
+			</section>
+			
             <p>You will need a User ID and password to begin using this application.</p>
 
-            <p>
+			</div>
+			<p>
                 <strong>Important Notice</strong><br/>
                 Unauthorized access of this system is a violation. This system is for OFFICIAL USE ONLY
                 and is subject to monitoring at all times. If you have reached this system in error, 
@@ -45,7 +49,6 @@
                 reveals evidence of criminal activity, systems personnel shall provide this as evidence 
                 to management and/or law enforcement officials.
             </p>
-
             <p><span id="lblWho">Welcome: #{request.getRemoteUser()}<br/></span></p>
         </ui:define>
     </ui:composition>
