@@ -14,22 +14,16 @@
 		<hr style="clear: both;" />
 		<h:dataTable value="#{onlineUsers.users}" var="user">
 			<h:column>
-				<f:facet name="header">Name</f:facet>    				
+				<f:facet name="header">First Name</f:facet>    				
       				#{user.firstName}
+ 			  </h:column>
+ 			  <h:column>
+ 			  <f:facet name="header">Last Name</f:facet>    				
+      				#{user.lastName}
  			  </h:column>
 		</h:dataTable>
 		<hr style="clear: both;" />
-		<p style="clear: both;">
-			<strong>Important Notice</strong><br /> This computer system is owned
-			and operated by the Government of the UNITED STATES of AMERICA.
-			Unauthorized access of this system is a violation of Federal Statutes
-			18 USC 30. This system is for OFFICIAL USE ONLY and is subject to
-			monitoring at all times. If you have reached this system in error,
-			disconnect now! The activity of authorized users may also be
-			monitored. If monitoring reveals evidence of criminal activity,
-			systems personnel may provide the evidence to management and/or law
-			enforcement officials.
-		</p>
+
 
 		<p>
 			<span id="lblWho">Welcome: #{request.getRemoteUser()}<br /></span>

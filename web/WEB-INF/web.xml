@@ -59,8 +59,9 @@
         <web-resource-collection>
             <web-resource-name>public</web-resource-name>
             <url-pattern>/index.html</url-pattern>
-            <url-pattern>/favicon.gif</url-pattern>
+            <url-pattern>/favicon.ico</url-pattern>
             <url-pattern>/resources/*</url-pattern>
+            <url-pattern>/qrcode/*</url-pattern>
             <http-method>HEAD</http-method>
             <http-method>OPTIONS</http-method>
             <http-method>TRACE</http-method>
@@ -76,6 +77,9 @@
             <web-resource-name>secure</web-resource-name>
             <url-pattern>/secure/*</url-pattern>
         </web-resource-collection>
+        <auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
         <user-data-constraint>
             <transport-guarantee>NONE</transport-guarantee>
         </user-data-constraint>
